@@ -195,14 +195,14 @@ function normalizeErrorMessage(message: string) {
               />
             </div>
           </div>
-
+ <!-- 
           <div class="field-group flex justify-center py-2">
-            <!-- Google reCAPTCHA -->
+           Google reCAPTCHA 
             <div 
               class="g-recaptcha" 
               :data-sitekey="siteKey"
             ></div>
-          </div>
+          </div>-->
 
           <button class="submit-btn" type="submit" :disabled="isSubmitting">
             <span v-if="isSubmitting" class="inline-flex items-center gap-2">
