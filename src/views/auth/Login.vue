@@ -16,14 +16,14 @@ const isSubmitting = ref(false)
 // const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Clé de test par défaut
 
 onMounted(() => {
-  // Charger le script reCAPTCHA s'il n'est pas déjà présent
-  if (!(window as any).grecaptcha) {
-    const script = document.createElement('script')
-    script.src = 'https://www.google.com/recaptcha/api.js'
-    script.async = true
-    script.defer = true
-    document.head.appendChild(script)
-  }
+  // // Charger le script reCAPTCHA s'il n'est pas déjà présent
+  // if (!(window as any).grecaptcha) {
+  //   const script = document.createElement('script')
+  //   script.src = 'https://www.google.com/recaptcha/api.js'
+  //   script.async = true
+  //   script.defer = true
+  //   document.head.appendChild(script)
+  // }
 })
 
 async function onSubmit() {
@@ -34,8 +34,9 @@ async function onSubmit() {
   }
   isSubmitting.value = true
   try {
-    const captchaToken = (window as any).grecaptcha?.getResponse() || ''
-    const result = await signIn(email.value, password.value, captchaToken)
+    // const captchaToken = (window as any).grecaptcha?.getResponse() || ''
+    // const result = await signIn(email.value, password.value, captchaToken)
+    const result = await signIn(email.value, password.value)
     if (!result.success || !result.data?.token) {
       const message = result.message || 'Connexion échouée.'
       error.value = normalizeErrorMessage(message)
@@ -43,7 +44,7 @@ async function onSubmit() {
     }
     localStorage.setItem('auth_token', result.data.token)
     localStorage.setItem('auth_user', JSON.stringify(result.data.user))
-    await new Promise((resolve) => setTimeout(resolve, 250))
+    // await new Promise((resolve) => setTimeout(resolve, 250))
     router.push('/admin')
   } catch (err) {
     const anyErr = err as any
@@ -195,8 +196,15 @@ function normalizeErrorMessage(message: string) {
               />
             </div>
           </div>
-
-          
+<!-- 
+          <div class="field-group flex justify-center py-2">
+            Google reCAPTCHA
+            <div 
+              class="g-recaptcha" 
+              :data-sitekey="siteKey"
+            ></div>
+          </div>
+ -->
           <button class="submit-btn" type="submit" :disabled="isSubmitting">
             <span v-if="isSubmitting" class="inline-flex items-center gap-2">
               <span class="spin-icon"></span>
