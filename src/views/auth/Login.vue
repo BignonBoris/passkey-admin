@@ -13,7 +13,7 @@ const email = ref('')
 const password = ref('')
 const error = ref('')
 const isSubmitting = ref(false)
-const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Clé de test par défaut
+// const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' // Clé de test par défaut
 
 onMounted(() => {
   // Charger le script reCAPTCHA s'il n'est pas déjà présent
@@ -196,14 +196,7 @@ function normalizeErrorMessage(message: string) {
             </div>
           </div>
 
-          <div class="field-group flex justify-center py-2">
-            <!-- Google reCAPTCHA -->
-            <div 
-              class="g-recaptcha" 
-              :data-sitekey="siteKey"
-            ></div>
-          </div>
-
+          
           <button class="submit-btn" type="submit" :disabled="isSubmitting">
             <span v-if="isSubmitting" class="inline-flex items-center gap-2">
               <span class="spin-icon"></span>
