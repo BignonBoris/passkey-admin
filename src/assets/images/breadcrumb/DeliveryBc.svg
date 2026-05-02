@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Livreur blanc en scooter</title>
+  <desc id="desc">Illustration monochrome blanche d'un livreur avec colis sur un scooter.</desc>
+
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="68" cy="140" r="18"/>
+    <circle cx="164" cy="140" r="18"/>
+
+    <path d="M66 120h52c8 0 15 5 18 12l4 10h-12l-4-8a10 10 0 0 0-9-6H66z"/>
+    <path d="M110 104h30c8 0 15 5 18 12l4 10h-13l-4-8a10 10 0 0 0-9-6h-26z"/>
+    <path d="M90 92l12 28h14l-10-28z"/>
+
+    <rect x="122" y="66" width="28" height="24" rx="3"/>
+    <line x1="136" y1="66" x2="136" y2="90"/>
+    <line x1="122" y1="78" x2="150" y2="78"/>
+
+    <circle cx="106" cy="68" r="10"/>
+    <path d="M97 67a9 9 0 0 1 18 0v2H97z"/>
+    <rect x="100" y="78" width="13" height="16" rx="4"/>
+    <path d="M107 92l14 10-7 9-10-8z"/>
+    <path d="M98 90l-7 12 8 6 8-10z"/>
+
+    <line x1="140" y1="102" x2="176" y2="88"/>
+    <line x1="176" y1="88" x2="184" y2="96"/>
+  </g>
+</svg>
