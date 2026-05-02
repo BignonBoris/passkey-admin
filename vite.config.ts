@@ -10,6 +10,7 @@ export default defineConfig({
     },
     dedupe: ["vue"],
   },
+  base: '/', // et non './' ou '/tailadmin-vuejs/'
   build: {
     chunkSizeWarningLimit: 800,
     rollupOptions: {
@@ -21,3 +22,5 @@ export default defineConfig({
     },
   },
 });
+
+
